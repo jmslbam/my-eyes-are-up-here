@@ -199,7 +199,7 @@ class MEAUH_Attachment {
 	 * @return mixed
 	 */
 	public function edit_fields( array $form_fields, $attachment ) {
-		if ( ! wp_attachment_is_image( $attachment->ID ) ) {
+		if ( ! isset( $attachment->ID ) || ! wp_attachment_is_image( $attachment->ID ) ) {
 			return $form_fields;
 		}
 
